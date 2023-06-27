@@ -1,8 +1,13 @@
 from django.urls import path    
 from . import views
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import PostViewSet
 
-
+router = DefaultRouter()
+router.register(r'posts', PostViewSet)
 
 urlpatterns = [
-    path('', views.allBlogPost, name= "allBlogPost"),
+    path('', include(router.urls)),
+    path('', views.allBlogPost, name= "allBlogPost")
 ]
