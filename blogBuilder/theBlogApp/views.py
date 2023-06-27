@@ -5,6 +5,6 @@ from .models import Post
 # Create your views here.
 
 def allBlogPost(request):
-    blogPosts= Post.object.all()  #this query tell the DB to give all the objects
+    blogPosts= Post.objects.all()  #this query tell the DB to give all the objects
     output= ",". join([p.title for p in blogPosts])
     return HttpResponse(output)
