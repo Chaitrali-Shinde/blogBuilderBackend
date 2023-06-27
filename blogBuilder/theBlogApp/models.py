@@ -6,4 +6,4 @@ class Post(models.Model):
     title=models.CharField(max_length=500)
     content=models.TextField()
     author= models.CharField( max_length=100)
-    createdAt= models.DateTimeField(auto_now_add=False)
+    createdAt= models.DateTimeField(auto_now_add=True)
